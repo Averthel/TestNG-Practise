@@ -29,4 +29,13 @@
         </classes>
     </test>
 
+    <test name="As user login using incorrect credentials DataProvider variant">
+        <classes>
+            <class name="tests.LoginTestsDA"></class>
+        </classes>
+    </test>
+
+
+
 </suite>
+

@@ -1,18 +1,17 @@
 package tests;
 
 import driver.DriverUtils;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.object.LoginPage;
+import utils.ClassDataProvider;
 
 import static navigation.ApplicationsURLs.APPLICATION_URL;
 import static org.testng.Assert.assertTrue;
 
-public class LoginTests extends TestBase {
+public class LoginTestsDA {
 
-    @Parameters({"username", "password", "expectedWarning"})
-    @Test
-    public void asUserLoginUsingIncorrectCredentials(String username, String password, String expectedWarning){
+    @Test(dataProviderClass = ClassDataProvider.class, dataProvider = "incorrectLoginData")
+    public void asUserLoginUsingIncorrectCredentialsDataProviderVariant(String username, String password, String expectedWarning){
         DriverUtils.navigateToPage(APPLICATION_URL);
         LoginPage loginPage = new LoginPage();
         loginPage
@@ -23,7 +22,6 @@ public class LoginTests extends TestBase {
         String message = loginPage.getFlashMessage();
 
         assertTrue(message.contains(expectedWarning));
-
     }
 
 }
