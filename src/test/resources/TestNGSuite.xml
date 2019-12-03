@@ -3,6 +3,27 @@
 <suite name="Login Tests">
 
     <test name="Login using correct username and incorrect password">
+        <parameter name="username" value="tomsmith"></parameter>
+        <parameter name="password" value="incorrectPassword"></parameter>
+        <parameter name="expectedWarning" value="Your password is invalid!"></parameter>
+        <classes>
+            <class name="tests.LoginTests"></class>
+        </classes>
+    </test>
+
+    <test name="Login using empty username and empty password">
+        <parameter name="username" value=""></parameter>
+        <parameter name="password" value=""></parameter>
+        <parameter name="expectedWarning" value="Your username is invalid!"></parameter>
+        <classes>
+            <class name="tests.LoginTests"></class>
+        </classes>
+    </test>
+
+    <test name="Login using incorrect username and incorrect password">
+        <parameter name="username" value="Andy"></parameter>
+        <parameter name="password" value="incorrectPassword"></parameter>
+        <parameter name="expectedWarning" value="Your username is invalid!"></parameter>
         <classes>
             <class name="tests.LoginTests"></class>
         </classes>
