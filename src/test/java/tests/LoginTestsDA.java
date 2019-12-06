@@ -8,7 +8,7 @@ import utils.ClassDataProvider;
 import static navigation.ApplicationsURLs.APPLICATION_URL;
 import static org.testng.Assert.assertTrue;
 
-public class LoginTestsDA {
+public class LoginTestsDA extends TestBase {
 
     @Test(dataProviderClass = ClassDataProvider.class, dataProvider = "incorrectLoginData")
     public void asUserLoginUsingIncorrectCredentialsDataProviderVariant(String username, String password, String expectedWarning){

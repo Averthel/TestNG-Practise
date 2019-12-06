@@ -35,6 +35,13 @@
         </classes>
     </test>
 
+    <test name="As user login using incorrect credentials Factory variant">
+        <classes>
+            <class name="tests.LoginTestsFA"></class>
+        </classes>
+    </test>
+
+
 
 
 </suite>
